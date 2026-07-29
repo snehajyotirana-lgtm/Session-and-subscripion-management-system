@@ -1,0 +1,186 @@
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #020617;
+    color: #e2e8f0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    @apply bg-slate-950;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-slate-950 text-slate-100;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  :root.light,
+  .theme-light {
+    color-scheme: light;
+    background: #f8fafc;
+    color: #0f172a;
+  }
+
+  :root.light body,
+  .theme-light body {
+    @apply bg-slate-50 text-slate-950;
+  }
+
+  :root.light .field-input,
+  .theme-light .field-input {
+    @apply bg-slate-50 border-slate-200 text-slate-950 placeholder:text-slate-500;
+  }
+
+  :root.light .primary-button,
+  .theme-light .primary-button {
+    @apply text-slate-950 bg-cyan-100 border-cyan-200 hover:bg-cyan-200;
+  }
+
+  :root.light .secondary-button,
+  .theme-light .secondary-button {
+    @apply text-slate-900 bg-white/90 border-slate-200 hover:bg-slate-100;
+  }
+
+  :root.light .rounded-2xl,
+  .theme-light .rounded-2xl {
+    @apply bg-white/90;
+  }
+
+  :root.light .border-white\/10,
+  .theme-light .border-white\/10 {
+    @apply border-slate-200;
+  }
+
+  :root.light .bg-slate-950,
+  .theme-light .bg-slate-950 {
+    background-color: #f8fafc !important;
+  }
+
+  :root.light .bg-slate-900,
+  .theme-light .bg-slate-900,
+  :root.light .bg-slate-900\/70,
+  .theme-light .bg-slate-900\/70,
+  :root.light .bg-slate-950\/80,
+  .theme-light .bg-slate-950\/80,
+  :root.light .bg-slate-950\/90,
+  .theme-light .bg-slate-950\/90,
+  :root.light .bg-slate-900\/60,
+  .theme-light .bg-slate-900\/60 {
+    background-color: #ffffff !important;
+  }
+
+  :root.light .bg-white\/5,
+  .theme-light .bg-white\/5,
+  :root.light .bg-white\/10,
+  .theme-light .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+  }
+
+  :root.light .bg-slate-950\/80,
+  .theme-light .bg-slate-950\/80,
+  :root.light .bg-slate-900\/40,
+  .theme-light .bg-slate-900\/40 {
+    background-color: rgba(248, 250, 252, 0.8) !important;
+  }
+
+  :root.light .text-white,
+  .theme-light .text-white,
+  :root.light .text-slate-100,
+  .theme-light .text-slate-100 {
+    color: #0f172a !important;
+  }
+
+  :root.light .text-slate-300,
+  .theme-light .text-slate-300,
+  :root.light .text-slate-400,
+  .theme-light .text-slate-400 {
+    color: #475569 !important;
+  }
+
+  :root.light .text-slate-950,
+  .theme-light .text-slate-950 {
+    color: #0f172a !important;
+  }
+
+  :root.light .border-white\/10,
+  .theme-light .border-white\/10,
+  :root.light .border-white\/20,
+  .theme-light .border-white\/20 {
+    border-color: #cbd5e1 !important;
+  }
+
+  :root.light .shadow-cyan-950\/30,
+  .theme-light .shadow-cyan-950\/30,
+  :root.light .shadow-2xl,
+  .theme-light .shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.12) !important;
+  }
+
+  :root.light .bg-slate-950\/70,
+  .theme-light .bg-slate-950\/70 {
+    background-color: rgba(241, 245, 249, 0.7) !important;
+  }
+
+  :root.light .bg-white\/90,
+  .theme-light .bg-white\/90 {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  #app {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .soft-card {
+    @apply rounded-[28px] border border-white/10 bg-slate-900/70 shadow-[0_24px_80px_-36px_rgba(8,47,73,0.9)] backdrop-blur;
+  }
+
+  .field-input {
+    @apply w-full rounded-2xl border border-white/10 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-cyan-400/40 focus:ring-4 focus:ring-cyan-400/10;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center gap-2 rounded-2xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm font-semibold text-cyan-50 transition hover:border-cyan-300/40 hover:bg-cyan-400/20 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-2xl border border-white/10 px-4 py-3 text-sm font-medium text-slate-200 transition hover:border-white/20 hover:bg-white/5 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(100, 116, 139, 0.55);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.75);
+  }
+}
